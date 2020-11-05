@@ -1,4 +1,5 @@
 #include "armstrong_numbers.h"
+#include <math.h>
 #include <stdio.h>
 
 bool is_armstrong_number(int num) {
@@ -12,10 +13,9 @@ bool is_armstrong_number(int num) {
         n1 = n1/10;
         count+=1;
     }
-printf("%d", count);
 /* this loop add each count*digit to result */
     while(n2 != 0){
-        result += count*(n2 % 10);
+        result += pow(n2 % 10, count);
         n2 = n2/10;
     }
 
