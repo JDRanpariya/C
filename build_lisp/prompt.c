@@ -36,14 +36,13 @@ int main(int argc, char** argv){
     while(1){
 
 /* outputs prompt */
-        char* input = readline("lispy> ");
+        char* input = readline("replica > ");
 
 /* add history of input */
 
         add_history(input);
 
-
-        printf("no you %s\n", input);
+        printf("I literary don't understand wth \"%s\" mean.\n", input);
 
         free(input);
 
