@@ -1,8 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <readline/history.h>
+#include <readline/readline.h>
 
-static char input[2048];
+/* #include <editline/readline.h> */
+/* #include <editline/history.h> */
 
-int main(){
+
+int main(int argc, char** argv){
 
     puts("lispy version 0.0.1");
     puts("use ctrl+c to exit\n");
@@ -10,11 +15,16 @@ int main(){
     while(1){
 
 /* outputs prompt */
-        fputs("lispy>",stdout);
-/* takes stdin and stores in input buffer of 2048 TODO wdym by 2048 */
-        fgets(input,2048,stdin);
+        char* input = readline("lispy> ");
 
-        printf("no you %s", input);
+/* add history of input */
+
+        add_history(input);
+
+
+        printf("no you %s\n", input);
+
+        free(input);
 
     }
 
